@@ -1,0 +1,19 @@
+<form class='m-form text-center' method='POST' role='form'>
+    {% csrf_token %}
+
+    {% if form.subject.errors %}
+        <ol role="alertdialog">
+            {% for error in form.subject.errors %}
+                <li role="alert"><strong>{{ error|escape }}</strong></li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+		
+    {% for field in form %}
+        <div class="form-group" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+            <label>{{ field.label }}</label>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button type="submit" class="col-12 btn btn-light">Submit</button>
+</form>

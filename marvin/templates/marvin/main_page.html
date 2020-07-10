@@ -1,0 +1,42 @@
+{% extends 'marvin/base.html' %}
+
+{% block main_content %}
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+    <div class="blog">
+        <h3 class="unselectable">My Thoughts</h3>
+
+        {% for post in posts %}
+        <div class="row-item">
+            <a href="{% url 'post_page' pk=post.pk %}">
+            <h4 class="unselectable">{{ post.title }}</h4>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+    <div class="projects">
+        <h3 class="unselectable">Projects</h3>
+
+        {% for project in projects %}
+        <div class="row-item">
+            {% if project.text == "." %}    
+                <a href="{{ project.link }}">
+            {% else %}
+                <a href="{% url 'project_page' pk=project.pk %}">
+            {% endif %}
+            <h4 class="unselectable">{{ project.title }}</h4>
+            <img class="app-icon" src="{{ project.image.url }}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

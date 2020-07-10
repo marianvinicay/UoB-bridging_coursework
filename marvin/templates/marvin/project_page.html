@@ -1,0 +1,17 @@
+{% extends 'marvin/base.html' %}
+
+{% block main_content %}
+    <div class="project col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        {% if user.is_authenticated %}
+            <a class="btn btn-light" href="{% url 'project_edit' pk=project.pk %}">Edit</a>
+        {% endif %}
+
+        <h2 class="text-center unselectable">{{ project.title }}<br><img class="app-icon" src="{{ project.image.url }}"></h2>
+        <p class="unselectable">{{ project.text|safe|linebreaksbr }}</p>
+        <br>
+        <div class="text-center">
+        <a class="btn btn-light" href="{{ project.link }}">Download</a>
+        </div>
+        <br><br>
+    </div>
+{% endblock %}
