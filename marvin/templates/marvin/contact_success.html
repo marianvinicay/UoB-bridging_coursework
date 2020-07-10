@@ -1,7 +1,9 @@
 {% extends 'marvin/base.html' %}
 
 {% block main_content %}
-    <div class='col-12'>
-    <h2 class="text-center">Thanks for the message!</h2>
+    <div class='col-12 text-center'>
+    <h2>Thanks for the message!</h2>
+    <br>
+    <a class="btn btn-light" href="{% url 'main_page'%}">Cancel</a>
     </div>
 {% endblock %}

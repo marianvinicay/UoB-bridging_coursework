@@ -2,8 +2,8 @@ from django import forms
 from .models import Post, Project
 
 class ContactForm(forms.Form):
-    email = forms.EmailField(label='Your email', widget=forms.EmailInput(attrs={'class': 'form-control'}), required=True)
-    message = forms.CharField(label='Your message', widget=forms.Textarea(attrs={'class': 'form-control'}), required=True)
+    email = forms.EmailField(label='Email address', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'your@email.com'}), required=True)
+    message = forms.CharField(label='Message', widget=forms.Textarea(attrs={'class': 'form-control'}), required=True)
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -29,7 +29,7 @@ class ProjectForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(
 				attrs={
-					'class': 'form-control'
+					'class': 'form-control',
 					}
 				),
             'text': forms.Textarea(
@@ -40,6 +40,11 @@ class ProjectForm(forms.ModelForm):
             'link': forms.TextInput(
 				attrs={
 					'class': 'form-control'
+					}
+				),
+			'image': forms.FileInput(
+				attrs={
+					'class': 'form-control-file'
 					}
 				),
 			}

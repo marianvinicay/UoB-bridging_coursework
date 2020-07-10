@@ -8,6 +8,7 @@
 
         <h2 class="text-center unselectable">{{ post.title }}</h2>
         <p class="unselectable">{{ post.text|safe|linebreaksbr }}</p>
-        <p class="unselectable">{{ post.created_date }}</p>
+        <br><br>
+        <p class="text-right unselectable">{{ post.created_date|date:"jS F Y" }}</p>
     </div>
 {% endblock %}
