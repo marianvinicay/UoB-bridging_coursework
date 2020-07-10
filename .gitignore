@@ -5,6 +5,7 @@ __pycache__
 myvenv
 db.sqlite3
 /static
-/marvin/model_images
+./static
+./marvin/model_images
 .env
 .DS_Store
