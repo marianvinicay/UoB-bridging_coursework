@@ -131,6 +131,11 @@ p {
     border-left: 4px red solid;
 }
 
+.ccol-md-6 .blog,
+.col-lg-6 .blog {
+    margin-right: 1rem;
+}
+
 .col-xs-12 .blog,
 .col-sm-12 .blog {
     margin-bottom: 4rem;
@@ -144,7 +149,8 @@ p {
 }
 
 .blog a > h4,
-.projects a > h4 {
+.projects a > h4,
+.projects a > img {
     margin: 0.5rem 0px;
 }
 
@@ -155,7 +161,7 @@ p {
 .projects .row-item a {
     padding-right: 10px;
     border-right: 3px white solid;
-    height: 100px;
+    min-height: 100px;
 }
 
 .projects .row-item a:hover {
