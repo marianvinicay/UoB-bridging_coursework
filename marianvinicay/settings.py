@@ -124,7 +124,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = decouple.config('SECRET_HOST_EMAIL')
 EMAIL_HOST_PASSWORD = decouple.config('SECRET_HOST_PSWD')
 EMAIL_PORT = 587

@@ -12,14 +12,14 @@ def main_page(request):
     return render(request, 'marvin/main_page.html', {'posts': posts, 'projects': projects})
 
 def contact(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = "Contact Form"
             from_email = form.cleaned_data['email']
             message = "From: " + from_email + "\n\n" + form.cleaned_data['message']
             
-            send_mail(subject, message, from_email, ['mv@marvin.tech'], fail_silently=True)
+            send_mail(subject, message, from_email, ["mv@marvin.tech"], fail_silently=True)
 
             return redirect('contact_success')
     else:
@@ -35,7 +35,7 @@ def post_page(request, pk):
     return render(request, 'marvin/post_page.html', {'post': post})
 
 def post_new(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
@@ -50,7 +50,7 @@ def post_new(request):
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
+    if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
@@ -67,7 +67,7 @@ def project_page(request, pk):
     return render(request, 'marvin/project_page.html', {'project': project})
 
 def project_new(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             project = form.save(commit=False)
@@ -80,7 +80,7 @@ def project_new(request):
 
 def project_edit(request, pk):
     project = get_object_or_404(Project, pk=pk)
-    if request.method == "POST":
+    if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             project = form.save()

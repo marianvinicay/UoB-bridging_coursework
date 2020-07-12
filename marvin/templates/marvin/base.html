@@ -6,20 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-    <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="{% static 'css/marvin.css' %}">
-    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
 
+    <link rel="stylesheet" href="{% static 'css/marvin.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
 </head>
 
-<body class="body-{% if request.resolver_match.url_name == "post_page" %}light{% else %}dark{% endif %}">
+<body class="body-{% if request.resolver_match.url_name == 'post_page' %}light{% else %}dark{% endif %}">
 
     <div class="header-dark-background">
         {% include "marvin/page_header.html" %}
